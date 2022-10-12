@@ -1,0 +1,20 @@
+<html>
+
+<head>
+  {{ content_for_header}}
+  {{ 'style.css' | asset_url | stylesheet_tag}}
+
+</head>
+
+<body>
+  <div class="center">
+    {% section 'header' %}
+    {%- comment -%} {% render 'header' %} {%- endcomment -%}
+
+    {{ content_for_layout}}
+  </div>
+  {{ 'scripts.js' | asset_url | script_tag}}
+
+</body>
+
+</html>

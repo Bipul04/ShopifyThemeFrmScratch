@@ -1,0 +1,11 @@
+{% paginate collections['frontpage'].products by 5 %}
+
+<h2>{{collections['frontpage'].title}}</h2>
+
+{% for product in collections['frontpage'].products %}
+{% render 'product-item', product: product %}
+{% endfor %}
+<hr />
+
+{{ paginate |default_pagination}}
+{% endpaginate %}
